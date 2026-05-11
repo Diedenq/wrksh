@@ -93,7 +93,7 @@
   .tl-label { font-size: 11px; letter-spacing: .12em; color: rgba(255,255,255,.4); margin-bottom: 20px; font-weight: 700; text-transform: uppercase;}
   .tl-heading { font-family: 'Unbounded', sans-serif; font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 36px; }
   
-  /* НОВЫЙ БЛОК ТЕМЫ И ЦЕЛИ */
+  /* БЛОК ТЕМЫ И ЦЕЛИ */
   .tl-info-box { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 24px 30px; margin-bottom: 32px; display: flex; flex-direction: column; gap: 18px; }
   .tl-info-row { display: flex; flex-direction: column; gap: 6px; }
   .tl-info-label { font-size: 10px; font-weight: 800; letter-spacing: .12em; color: var(--accent); text-transform: uppercase; }
@@ -128,7 +128,7 @@
   .wm-item p { font-size: 14px; padding-top: 3px; font-weight: 500;}
   .wm-hint { margin-top: 18px; font-size: 13px; color: var(--ink2); padding: 14px 18px; background: rgba(232,93,47,.07); border-radius: 10px; border-left: 3px solid var(--accent); }
 
-  /* ЭТАПЫ КОНВЕЙЕРА (CSS GRID АНИМАЦИЯ) */
+  /* ЭТАПЫ КОНВЕЙЕРА */
   .steps-section { background: var(--bg2); }
   .steps-intro { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; margin-bottom: 44px; }
   .steps-intro p { font-size: 14px; color: var(--ink2); max-width: 380px; font-weight: 500;}
@@ -235,15 +235,15 @@
   .qr-section { background: var(--bg2); position: relative; padding-bottom: 60px; }
   .qr-layout { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; margin-top: 44px; }
   .qr-text h3 { font-family: 'Unbounded', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 14px; }
-  .qr-text p { font-size: 14px; color: var(--ink2); font-weight: 500; max-width: 400px; line-height: 1.7; }
-  .qr-box { width: 200px; height: 200px; border: 2px dashed var(--border); border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: var(--card); flex-shrink: 0; box-shadow: 0 12px 32px rgba(0,0,0,.05);}
-  .qr-box svg { opacity: .4; }
-  .qr-box span { font-size: 12px; font-weight: 600; color: var(--ink2); text-align: center; line-height: 1.4; }
+  .qr-text p { font-size: 15px; color: var(--ink2); font-weight: 500; max-width: 400px; line-height: 1.7; }
+  
+  .qr-box { width: 220px; height: 220px; border-radius: 24px; flex-shrink: 0; box-shadow: 0 12px 32px rgba(0,0,0,.08); overflow: hidden; background: var(--card); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .qr-box img { width: 100%; height: 100%; object-fit: contain; }
 
   .back-to-top { display: flex; justify-content: center; margin-top: 60px; }
 
-  footer { background: var(--ink); color: rgba(255,255,255,.5); padding: 40px; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-  footer strong { color: #fff; font-family: 'Unbounded', sans-serif; font-size: 12px; }
+  footer { background: var(--ink); color: rgba(255,255,255,.5); padding: 40px; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 500; }
+  footer strong { color: #fff; font-family: 'Unbounded', sans-serif; font-size: 14px; }
 
   /* МОБИЛЬНАЯ АДАПТАЦИЯ */
   @media(max-width:768px){
@@ -273,7 +273,6 @@
     .tl-name { font-size: 14px; margin-bottom: 2px; }
     .tl-desc { font-size: 12px; }
     
-    /* Адаптив для нового инфо-блока */
     .tl-info-box { padding: 18px; margin-bottom: 24px; gap: 14px;}
     .tl-info-text { font-size: 14px; }
 
@@ -322,8 +321,8 @@
     .qr-box { margin: 0 auto; width: 180px; height: 180px; }
     .back-to-top { margin-top: 40px; }
     .back-to-top .btn { width: 100%; }
-    footer { padding: 30px 20px; flex-direction: column; text-align: center; gap: 16px; }
-    footer > div:last-child { text-align: center; }
+    
+    footer { padding: 30px 20px; }
   }
 </style>
 </head>
@@ -343,15 +342,16 @@
 <nav>
   <div class="nav-logo">AI-Конвейер</div>
   <div class="nav-links">
-    <a href="#timeline"><span class="ru">Программа</span><span class="kz">Бағдарлама</span></a>
-    <a href="#steps"><span class="ru">Этапы</span><span class="kz">Кезеңдер</span></a>
-    <a href="#practice"><span class="ru">Практика</span><span class="kz">Тәжірибе</span></a>
-    <a href="#results"><span class="ru">Итоги</span><span class="kz">Қорытынды</span></a>
     
     <div class="switcher">
       <button class="s-btn active" data-l="ru" onclick="setLang('ru')">RU</button>
       <button class="s-btn" data-l="kz" onclick="setLang('kz')">KZ</button>
     </div>
+
+    <a href="#timeline"><span class="ru">Программа</span><span class="kz">Бағдарлама</span></a>
+    <a href="#steps"><span class="ru">Этапы</span><span class="kz">Кезеңдер</span></a>
+    <a href="#practice"><span class="ru">Практика</span><span class="kz">Тәжірибе</span></a>
+    <a href="#results"><span class="ru">Итоги</span><span class="kz">Қорытынды</span></a>
   </div>
 </nav>
 
@@ -407,7 +407,6 @@
   <div class="tl-label"><span class="ru">Программа воркшопа · 40 минут</span><span class="kz">Воркшоп бағдарламасы · 40 минут</span></div>
   <div class="tl-heading"><span class="ru">От теории к реальному результату</span><span class="kz">Теориядан нақты нәтижеге дейін</span></div>
 
-  <!-- НОВЫЙ БЛОК: ТЕМА И ЦЕЛЬ -->
   <div class="tl-info-box">
     <div class="tl-info-row">
       <div class="tl-info-label"><span class="ru">Тема мастер-класса</span><span class="kz">Шеберлік сыныбының тақырыбы</span></div>
@@ -425,7 +424,6 @@
     </div>
   </div>
 
-  <!-- ОБНОВЛЕННЫЙ ТАЙМЛАЙН -->
   <div class="tl-grid">
     <div class="tl-block">
       <div class="tl-time">0–5</div>
@@ -793,13 +791,12 @@
   <div class="qr-layout">
     <div class="qr-text">
       <p>
-        <span class="ru">Сгенерируйте свой QR-код через любой сторонний сервис (например, qr.io), чтобы участники могли открыть этот сайт на своих смартфонах.</span>
-        <span class="kz">Қатысушылар бұл сайтты смартфондарында аша алуы үшін кез келген үшінші тарап сервисі (мысалы, qr.io) арқылы өз QR-кодыңызды жасаңыз.</span>
+        <span class="ru">Поделитесь сайтом при помощи QR-кода.</span>
+        <span class="kz">Сайтпен QR-код арқылы бөлісіңіз.</span>
       </p>
     </div>
     <div class="qr-box">
-      <svg width="60" height="60" viewBox="0 0 80 80" fill="none"><rect x="4" y="4" width="28" height="28" rx="4" stroke="#1A1917" stroke-width="4"/><rect x="12" y="12" width="12" height="12" fill="#1A1917"/><rect x="48" y="4" width="28" height="28" rx="4" stroke="#1A1917" stroke-width="4"/><rect x="56" y="12" width="12" height="12" fill="#1A1917"/><rect x="4" y="48" width="28" height="28" rx="4" stroke="#1A1917" stroke-width="4"/><rect x="12" y="56" width="12" height="12" fill="#1A1917"/><rect x="48" y="48" width="8" height="8" fill="#1A1917"/><rect x="60" y="48" width="8" height="8" fill="#1A1917"/><rect x="48" y="60" width="8" height="8" fill="#1A1917"/><rect x="60" y="60" width="8" height="8" fill="#1A1917"/><rect x="72" y="48" width="4" height="4" fill="#1A1917"/><rect x="72" y="60" width="4" height="4" fill="#1A1917"/></svg>
-      <span><span class="ru">Место для<br>QR-кода</span><span class="kz">QR-код<br>орны</span></span>
+      <img src="qr.png" alt="QR-код">
     </div>
   </div>
   
@@ -810,7 +807,6 @@
 
 <footer>
   <div><strong>AI-Конвейер / AI-Конвейері</strong><br><span class="ru">Воркшоп «Доступная среда для каждого»</span><span class="kz">«Әркімге қолжетімді орта» воркшопы</span></div>
-  <div><span class="ru">Четыре шага · Один текст · Каждый ребёнок</span><span class="kz">Төрт қадам · Бір мәтін · Әрбір бала</span></div>
 </footer>
 
 <script>
